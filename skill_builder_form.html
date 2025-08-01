@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing Section</title>
+  <link rel="stylesheet" href="css/beginner_form.css">
+  <script>
+    function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("open");
+}
+
+function toggleCourses() {
+    const dropdown = document.querySelector(".mobile-dropdown");
+    dropdown.classList.toggle("open");
+}
+  </script>
+</head>
+<body>
+ <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">All Courses</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="beginner_plan.html">Beginner</a></li>
+                            <li><a href="skill_builder_plan.html">Skill Builder</a></li>
+                            <li><a href="achiever_plan.html">Career Growth</a></li>
+                            <li><a href="pro_plan.html">Job Ready</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Mobile Side Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <span class="close-btn" onclick="toggleMenu()">×</span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="mobile-dropdown">
+                    <span onclick="toggleCourses()">All Courses ▼</span>
+                    <ul class="mobile-submenu" id="courseSubMenu">
+                        <li><a href="beginner_plan.html">Beginner</a></li>
+                        <li><a href="skill_builder_plan.html">Skill Builder</a></li>
+                        <li><a href="achiever_plan.html">Career Growth</a></li>
+                        <li><a href="pro_plan.html">Job Ready</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+  <h1>One Test. One Certificate. One Big Step.</h1>
+  <p class="subtitle">Showcase your skills in minutes — and stand out.</p>
+  <div class="pricing-section">
+    <!-- Basic Card -->
+    <div class="pricing-card">
+      <div class="card-header">
+        <span class="card-title">Basic</span>
+        <span class="tag">For Individual</span>
+      </div>
+      <div class="price-row">
+        <span class="price">Free</span>
+        <span class="permanent">/ Forever</span>
+      </div>
+      <ul>
+        <li><span class="icon">➜</span> Use All Services For Free</li>
+        <li><span class="icon">➜</span> Free Login & Password</li>
+        <li><span class="icon">➜</span> No Commissions/Earnings</li>
+        <li><span class="icon">➜</span> No Customer Support</li>
+        <li><span class="icon">➜</span> No Payouts</li>
+      </ul>
+      <a href="skill_builder_app499.html" class="cta-btn outline">TRY FREE</a>
+    </div>
+    <!-- Premium Card -->
+    <div class="pricing-card">
+      <div class="card-header">
+        <span class="card-title">Premium</span>
+        <span class="tag">For Ready Candidates</span>
+      </div>
+      <div class="price-row">
+        <span class="price">499</span>
+        <span class="permanent">/ Forever</span>
+      </div>
+      <ul>
+        <li><span class="icon">➜</span> Use All Services For Free</li>
+        <li><span class="icon">➜</span> Agent Login & Password</li>
+        <li><span class="icon">➜</span> Earn upto 1Lakh/Month</li>
+        <li><span class="icon">➜</span> 24/7 Customer Support</li>
+        <li><span class="icon">➜</span> Weekly Payouts</li>
+      </ul>
+      <a href="#" class="cta-btn primary">BUY NOW</a>
+    </div>
+  </div>
+  <div id="buyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <p>This plan is currently unavailable. Please proceed with the free application form to continue</p>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buyButtons = document.querySelectorAll('.cta-btn.primary');
+    const modal = document.getElementById('buyModal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    buyButtons.forEach(function (button) {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+      });
+    });
+
+    // Close the modal
+    closeBtn.addEventListener('click', function () {
+      modal.style.display = 'none';
+    });
+
+    // Click outside modal content to close
+    window.addEventListener('click', function (e) {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>
